@@ -11,7 +11,7 @@ public class Funcionario
     private int id_departamento;
     private double salario;
     private string telefone;
-
+    List<Funcionario> fun = new List<Funcionario>();
     public void Cadastrar_Funcionario(int id, string endereco, int matricula, string nome, string data_nascimento, string cpf, int id_departamento, double salario, string telefone)
     {
         
