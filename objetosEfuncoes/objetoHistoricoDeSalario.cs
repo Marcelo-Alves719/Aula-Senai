@@ -8,6 +8,8 @@ public class HistoricoDeSalario
     private int idhistoricosalario =0;
     public void CadastrarHistoricoDeSalario(int id_funcionario, double SalarioAnterior, double NovoSalario, string data)
     {
+
+        hsalario[idhistoricosalario] = new HistoricoDeSalario();
         hsalario[idhistoricosalario].id_funcionario = id_funcionario;
         hsalario[idhistoricosalario].SalarioAnterior = SalarioAnterior;
         hsalario[idhistoricosalario].NovoSalario = NovoSalario;
