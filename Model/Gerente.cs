@@ -1,0 +1,33 @@
+
+public class objetoGerente
+{
+    public string nome;
+    public int id;
+}
+
+public class Gerente_funcao
+{
+    private objetoGerente[] ge = new objetoGerente[1000];
+    private int indice = 0;
+
+
+    public void cadastrar_Gerente(string nome)
+    {
+        ge[indice] = new objetoGerente();
+
+        ge[indice].nome = nome;
+        ge[indice].id = indice;
+
+        indice++;
+    }
+
+
+    public objetoGerente[] vetorGerente()
+    {
+        return ge;
+    }
+    private bool ValidaIdGerente(int idd)
+    {
+        return true;
+    }
+}

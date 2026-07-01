@@ -1,0 +1,15 @@
+namespace atividadegit.Model{
+class GestaoHds()
+{
+    
+    HistoricoDeSalario[] hsalario = new HistoricoDeSalario[1000];
+    private int idhistoricosalario =0;
+
+public void CadastrarHistoricoSalarial(HistoricoDeSalario his)
+        {
+            this.hsalario[idhistoricosalario] = his;
+            idhistoricosalario ++;
+        }
+    
+}
+}
