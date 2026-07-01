@@ -1,13 +1,9 @@
-﻿using System.Data.Common;
-using System.Globalization;
-using System.Net.NetworkInformation;
-using System.Reflection;
-using System.Reflection.Metadata;
-using System.Text.RegularExpressions;
-namespace ObjetosEfuncoes.ObjetosEfuncoes
-{
-    public class Funcionario
+﻿namespace atividadegit.Model{
+
+    class Funcionario
     {
+        private static int idFuncionario = 1;
+
         private int id;
         private string endereco;
         private int matricula;
@@ -17,40 +13,46 @@ namespace ObjetosEfuncoes.ObjetosEfuncoes
         private int id_departamento;
         private double salario;
         private string telefone;
-        public Funcionario[] fn = new Funcionario[1000];
-        private int idFuncionario = 0;
+
         public void Cadastrar_Funcionario(string endereco, int matricula, string nome, int data_nascimento, string cpf, int id_departamento, double salario, string telefone)
         {
-            fn[idFuncionario] = new Funcionario();
-
-            fn[idFuncionario].endereco = endereco;
-            fn[idFuncionario].id = idFuncionario;
-            fn[idFuncionario].nome = nome;
-            fn[idFuncionario].data_nascimento = data_nascimento;
-            fn[idFuncionario].cpf = cpf;
-            fn[idFuncionario].matricula = idFuncionario * 12 - 7;
-            fn[idFuncionario].id_departamento = id_departamento;
-            fn[idFuncionario].salario = salario;
-            fn[idFuncionario].telefone = telefone;
+            id = idFuncionario;
             idFuncionario++;
+            this.endereco = endereco;
+            this.matricula = matricula;
+            this.nome = nome;
+            this.data_nascimento = data_nascimento;
+            this.cpf = cpf;
+            this.id_departamento = id_departamento;
+            this.salario = salario;
+            this.telefone = telefone;
         }
+
         private bool ValidaSalario(double salario)
         {
             return salario > 1600;
         }
-        public bool ValidaFuncionario(int data , string nome)
+
+        public bool ValidaFuncionario(int data, string nome)
         {
-        
-              if (nome.Length < 3)
+            if (nome.Length < 3)
             {
-                Console.WriteLine("Informe um nome válido, por favor?");
+                Console.WriteLine("Informe um nome válido, por favor.");
                 return false;
             }
-              if (data_nascimento < 19500620)
+
+            if (data < 19500620)
             {
                 Console.WriteLine("Informe uma data de nascimento válida, que seja maior que 20/06/1950.");
                 return false;
             }
+
+            if (!ValidaSalario(salario))
+            {
+                Console.WriteLine("Salário inválido.");
+                return false;
+            }
+
             return true;
         }
     }

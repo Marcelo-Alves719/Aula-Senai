@@ -1,33 +1,19 @@
 
+namespace atividadegit.Model{
+
 public class objetoGerente
 {
     public string nome;
     public int id;
-}
+    int contadorGerente=0;
 
-public class Gerente_funcao
-{
-    private objetoGerente[] ge = new objetoGerente[1000];
-    private int indice = 0;
 
 
     public void cadastrar_Gerente(string nome)
     {
-        ge[indice] = new objetoGerente();
-
-        ge[indice].nome = nome;
-        ge[indice].id = indice;
-
-        indice++;
+      this.nome = nome;
+      id = contadorGerente++;
+        
     }
-
-
-    public objetoGerente[] vetorGerente()
-    {
-        return ge;
-    }
-    private bool ValidaIdGerente(int idd)
-    {
-        return true;
-    }
+}
 }

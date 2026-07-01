@@ -1,0 +1,13 @@
+namespace atividadegit.Model{
+class GestaoFuncionario
+{
+    private Funcionario[] fn = new Funcionario[1000];
+    private int idFuncionari = 0;
+
+    public void CadastrarFuncionario(Funcionario fun)
+    {
+        this.fn[idFuncionari] = fun;
+        idFuncionari++;
+    }
+}
+}

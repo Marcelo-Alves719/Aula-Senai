@@ -1,8 +1,10 @@
 ﻿using atividadegit.Model;
 class Principal
 {
-    static void Main(string[] args)
+    static void Main()
     {
+
+        /*
         int id = 0;
         int id_gerente = 0;
         int Cadastro_Geral = 0;
@@ -76,6 +78,7 @@ class Principal
             default:
                 Console.WriteLine("Nenhuma das opções disponível");
                 break;
+                */
         }
     }
 }
